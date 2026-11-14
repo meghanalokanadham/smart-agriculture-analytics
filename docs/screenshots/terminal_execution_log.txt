@@ -1,0 +1,86 @@
+﻿================================================================================
+   BIG DATA DISTRIBUTED SMART AGRICULTURE ANALYTICS PLATFORM (V2.5)   
+================================================================================
+
+[STEP 1] Ingesting multi-source agricultural datasets into Distributed DataFrame...
+-> Successfully loaded 15,000 records partitioned across 6 virtual worker nodes.
+-> Schema: ['record_id', 'region', 'climate_zone', 'crop_type', 'soil_type', 'soil_ph', 'organic_matter_pct', 'nitrogen_ppm', 'phosphorus_ppm', 'potassium_ppm', 'soil_moisture_pct', 'annual_rainfall_mm', 'avg_temperature_c', 'solar_radiation_mj', 'irrigation_type', 'fertilizer_usage_kg_ha', 'pest_pressure_score', 'crop_yield_ton_ha', 'yield_efficiency_category']
+
+[STEP 2] Distributed Transformations & Feature Engineering...
+-> Engineered features: npk_balance_ratio, thermal_stress_index, soil_fertility_score
+
+[STEP 3] Performing Catalyst-Style Distributed Aggregations...
+
+--- [A] Regional Agronomic Benchmark (Mean Yield, Rainfall, Soil Fertility) ---
++------------------------+-------+-----------------------+-----------------------+-----------------------+------------------------+--------------------------+
+| region                 | count | avg_crop_yield_ton_ha | max_crop_yield_ton_ha | std_crop_yield_ton_ha | avg_annual_rainfall_mm | avg_soil_fertility_score |
++------------------------+-------+-----------------------+-----------------------+-----------------------+------------------------+--------------------------+
+| Indo_Gangetic_Plain_IN | 2958  | 16.872                | 84.12                 | 25.455                | 1100.432               | 50.773                   |
+| Midwest_Corn_Belt_US   | 2938  | 4.996                 | 11.68                 | 2.622                 | 950.43                 | 90.946                   |
+| Mediterranean_Basin_ES | 3027  | 4.848                 | 10.76                 | 1.831                 | 519.239                | 44.243                   |
+| East_African_Rift_KE   | 3034  | 4.833                 | 17.57                 | 4.523                 | 879.295                | 61.078                   |
+| Cerrado_Central_BR     | 3043  | 2.737                 | 10.53                 | 2.033                 | 1407.91                | 48.67                    |
++------------------------+-------+-----------------------+-----------------------+-----------------------+------------------------+--------------------------+
+Showing top 5 of 5 distributed records.
+
+
+--- [B] Crop-Specific Performance Across Soil Types ---
++-----------+------------+-------+-----------------------+--------------------------+------------------------+
+| crop_type | soil_type  | count | avg_crop_yield_ton_ha | avg_soil_fertility_score | avg_organic_matter_pct |
++-----------+------------+-------+-----------------------+--------------------------+------------------------+
+| Sugarcane | Silt_Loam  | 89    | 61.326                | 50.429                   | 1.216                  |
+| Sugarcane | Black_Soil | 117   | 60.863                | 50.956                   | 1.24                   |
+| Sugarcane | Red_Sandy  | 110   | 59.312                | 51.083                   | 1.213                  |
+| Sugarcane | Sandy_Loam | 104   | 59.122                | 50.579                   | 1.167                  |
+| Sugarcane | Loam       | 116   | 58.716                | 50.429                   | 1.314                  |
+| Sugarcane | Alluvial   | 95    | 58.499                | 50.556                   | 1.294                  |
+| Sugarcane | Clay_Loam  | 113   | 58.099                | 51.124                   | 1.226                  |
+| Cassava   | Alluvial   | 109   | 12.414                | 62.063                   | 3.047                  |
++-----------+------------+-------+-----------------------+--------------------------+------------------------+
+Showing top 8 of 98 distributed records.
+
+
+--- [C] Irrigation System Efficiency Comparison ---
++-----------------+-------+-----------------------+-----------------------+----------------------------+
+| irrigation_type | count | avg_crop_yield_ton_ha | avg_soil_moisture_pct | avg_fertilizer_usage_kg_ha |
++-----------------+-------+-----------------------+-----------------------+----------------------------+
+| Sprinkler       | 3775  | 7.007                 | 29.486                | 133.499                    |
+| Rainfed         | 3806  | 6.864                 | 21.639                | 132.603                    |
+| Drip            | 3746  | 6.704                 | 33.719                | 132.756                    |
+| Flood_Furrow    | 3673  | 6.687                 | 36.524                | 132.973                    |
++-----------------+-------+-----------------------+-----------------------+----------------------------+
+Showing top 4 of 4 distributed records.
+
+
+[STEP 4] Executing Distributed K-Means Clustering for Soil-Climatic Zonation...
+-> K-Means Converged in 4 clusters. Total Inertia (WCSS): 56796.97
+   * Cluster 0 (Zone Alpha: High-Rainfall Acidic Subtropical (High Leaching)): 3,048 samples (20.3%)
+   * Cluster 1 (Zone Beta: Optimal Loamy Balanced Temperate (High Yield Potential)): 5,419 samples (36.1%)
+   * Cluster 2 (Zone Gamma: Semi-Arid Alkaline Low-Precipitation (Drought Prone)): 3,445 samples (23.0%)
+   * Cluster 3 (Zone Delta: Tropical High-Nutrient High-Temperature): 3,088 samples (20.6%)
+
+[STEP 5] Training Supervised Classification Model for Yield Efficiency...
+-> Dataset partition: 12,000 training samples, 3,000 testing samples.
+
+-> Supervised Model Accuracy: 62.40%
+-> Macro F1-Score: 0.5073
+
+--- Per-Class Performance Metrics ---
+   * Class 'High': Precision=0.345, Recall=0.185, F1=0.241, Support=162
+   * Class 'Low': Precision=0.693, Recall=0.630, F1=0.660, Support=1510
+   * Class 'Medium': Precision=0.578, Recall=0.671, F1=0.621, Support=1328
+
+--- Confusion Matrix ---
+Actual \ Pred |     High |      Low |   Medium
+----------------------------------------------
+High          |       30 |       34 |       98
+Low           |        7 |      951 |      552
+Medium        |       50 |      387 |      891
+
+[STEP 6] Exporting Processed Big Data & Analytical JSON...
+-> Processed dataset saved to: data/processed/agri_analytics_master.csv
+-> Analytics summary generated at: reports/analytics_results.json
+
+================================================================================
+   PIPELINE EXECUTION FINISHED SUCCESSFULLY IN 3.25s   
+================================================================================

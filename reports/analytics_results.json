@@ -1,0 +1,285 @@
+{
+  "execution_timestamp": "2026-11-14 23:03:18",
+  "total_records_processed": 15000,
+  "execution_duration_sec": 3.25,
+  "cluster_metrics": {
+    "k": 4,
+    "inertia": 56796.97,
+    "clusters": [
+      {
+        "id": 0,
+        "name": "Zone Alpha: High-Rainfall Acidic Subtropical (High Leaching)",
+        "sample_count": 3048
+      },
+      {
+        "id": 1,
+        "name": "Zone Beta: Optimal Loamy Balanced Temperate (High Yield Potential)",
+        "sample_count": 5419
+      },
+      {
+        "id": 2,
+        "name": "Zone Gamma: Semi-Arid Alkaline Low-Precipitation (Drought Prone)",
+        "sample_count": 3445
+      },
+      {
+        "id": 3,
+        "name": "Zone Delta: Tropical High-Nutrient High-Temperature",
+        "sample_count": 3088
+      }
+    ]
+  },
+  "classification_metrics": {
+    "accuracy": 0.624,
+    "macro_f1": 0.5073,
+    "per_class": {
+      "High": {
+        "precision": 0.3448,
+        "recall": 0.1852,
+        "f1_score": 0.241,
+        "support": 162
+      },
+      "Low": {
+        "precision": 0.6931,
+        "recall": 0.6298,
+        "f1_score": 0.6599,
+        "support": 1510
+      },
+      "Medium": {
+        "precision": 0.5782,
+        "recall": 0.6709,
+        "f1_score": 0.6211,
+        "support": 1328
+      }
+    },
+    "confusion_matrix": {
+      "High": {
+        "High": 30,
+        "Low": 34,
+        "Medium": 98
+      },
+      "Low": {
+        "High": 7,
+        "Low": 951,
+        "Medium": 552
+      },
+      "Medium": {
+        "High": 50,
+        "Low": 387,
+        "Medium": 891
+      }
+    }
+  },
+  "regional_benchmarks": [
+    {
+      "region": "Indo_Gangetic_Plain_IN",
+      "count": 2958,
+      "avg_crop_yield_ton_ha": 16.872,
+      "max_crop_yield_ton_ha": 84.12,
+      "std_crop_yield_ton_ha": 25.455,
+      "avg_annual_rainfall_mm": 1100.432,
+      "avg_soil_fertility_score": 50.773
+    },
+    {
+      "region": "Midwest_Corn_Belt_US",
+      "count": 2938,
+      "avg_crop_yield_ton_ha": 4.996,
+      "max_crop_yield_ton_ha": 11.68,
+      "std_crop_yield_ton_ha": 2.622,
+      "avg_annual_rainfall_mm": 950.43,
+      "avg_soil_fertility_score": 90.946
+    },
+    {
+      "region": "Mediterranean_Basin_ES",
+      "count": 3027,
+      "avg_crop_yield_ton_ha": 4.848,
+      "max_crop_yield_ton_ha": 10.76,
+      "std_crop_yield_ton_ha": 1.831,
+      "avg_annual_rainfall_mm": 519.239,
+      "avg_soil_fertility_score": 44.243
+    },
+    {
+      "region": "East_African_Rift_KE",
+      "count": 3034,
+      "avg_crop_yield_ton_ha": 4.833,
+      "max_crop_yield_ton_ha": 17.57,
+      "std_crop_yield_ton_ha": 4.523,
+      "avg_annual_rainfall_mm": 879.295,
+      "avg_soil_fertility_score": 61.078
+    },
+    {
+      "region": "Cerrado_Central_BR",
+      "count": 3043,
+      "avg_crop_yield_ton_ha": 2.737,
+      "max_crop_yield_ton_ha": 10.53,
+      "std_crop_yield_ton_ha": 2.033,
+      "avg_annual_rainfall_mm": 1407.91,
+      "avg_soil_fertility_score": 48.67
+    }
+  ],
+  "irrigation_benchmarks": [
+    {
+      "irrigation_type": "Sprinkler",
+      "count": 3775,
+      "avg_crop_yield_ton_ha": 7.007,
+      "avg_soil_moisture_pct": 29.486,
+      "avg_fertilizer_usage_kg_ha": 133.499
+    },
+    {
+      "irrigation_type": "Rainfed",
+      "count": 3806,
+      "avg_crop_yield_ton_ha": 6.864,
+      "avg_soil_moisture_pct": 21.639,
+      "avg_fertilizer_usage_kg_ha": 132.603
+    },
+    {
+      "irrigation_type": "Drip",
+      "count": 3746,
+      "avg_crop_yield_ton_ha": 6.704,
+      "avg_soil_moisture_pct": 33.719,
+      "avg_fertilizer_usage_kg_ha": 132.756
+    },
+    {
+      "irrigation_type": "Flood_Furrow",
+      "count": 3673,
+      "avg_crop_yield_ton_ha": 6.687,
+      "avg_soil_moisture_pct": 36.524,
+      "avg_fertilizer_usage_kg_ha": 132.973
+    }
+  ],
+  "crop_soil_benchmarks": [
+    {
+      "crop_type": "Sugarcane",
+      "soil_type": "Silt_Loam",
+      "count": 89,
+      "avg_crop_yield_ton_ha": 61.326,
+      "avg_soil_fertility_score": 50.429,
+      "avg_organic_matter_pct": 1.216
+    },
+    {
+      "crop_type": "Sugarcane",
+      "soil_type": "Black_Soil",
+      "count": 117,
+      "avg_crop_yield_ton_ha": 60.863,
+      "avg_soil_fertility_score": 50.956,
+      "avg_organic_matter_pct": 1.24
+    },
+    {
+      "crop_type": "Sugarcane",
+      "soil_type": "Red_Sandy",
+      "count": 110,
+      "avg_crop_yield_ton_ha": 59.312,
+      "avg_soil_fertility_score": 51.083,
+      "avg_organic_matter_pct": 1.213
+    },
+    {
+      "crop_type": "Sugarcane",
+      "soil_type": "Sandy_Loam",
+      "count": 104,
+      "avg_crop_yield_ton_ha": 59.122,
+      "avg_soil_fertility_score": 50.579,
+      "avg_organic_matter_pct": 1.167
+    },
+    {
+      "crop_type": "Sugarcane",
+      "soil_type": "Loam",
+      "count": 116,
+      "avg_crop_yield_ton_ha": 58.716,
+      "avg_soil_fertility_score": 50.429,
+      "avg_organic_matter_pct": 1.314
+    },
+    {
+      "crop_type": "Sugarcane",
+      "soil_type": "Alluvial",
+      "count": 95,
+      "avg_crop_yield_ton_ha": 58.499,
+      "avg_soil_fertility_score": 50.556,
+      "avg_organic_matter_pct": 1.294
+    },
+    {
+      "crop_type": "Sugarcane",
+      "soil_type": "Clay_Loam",
+      "count": 113,
+      "avg_crop_yield_ton_ha": 58.099,
+      "avg_soil_fertility_score": 51.124,
+      "avg_organic_matter_pct": 1.226
+    },
+    {
+      "crop_type": "Cassava",
+      "soil_type": "Alluvial",
+      "count": 109,
+      "avg_crop_yield_ton_ha": 12.414,
+      "avg_soil_fertility_score": 62.063,
+      "avg_organic_matter_pct": 3.047
+    },
+    {
+      "crop_type": "Cassava",
+      "soil_type": "Red_Sandy",
+      "count": 106,
+      "avg_crop_yield_ton_ha": 12.178,
+      "avg_soil_fertility_score": 61.289,
+      "avg_organic_matter_pct": 3.03
+    },
+    {
+      "crop_type": "Cassava",
+      "soil_type": "Black_Soil",
+      "count": 111,
+      "avg_crop_yield_ton_ha": 12.178,
+      "avg_soil_fertility_score": 60.628,
+      "avg_organic_matter_pct": 2.942
+    },
+    {
+      "crop_type": "Cassava",
+      "soil_type": "Loam",
+      "count": 121,
+      "avg_crop_yield_ton_ha": 12.162,
+      "avg_soil_fertility_score": 61.825,
+      "avg_organic_matter_pct": 3.001
+    },
+    {
+      "crop_type": "Cassava",
+      "soil_type": "Silt_Loam",
+      "count": 103,
+      "avg_crop_yield_ton_ha": 11.953,
+      "avg_soil_fertility_score": 61.296,
+      "avg_organic_matter_pct": 2.984
+    },
+    {
+      "crop_type": "Cassava",
+      "soil_type": "Sandy_Loam",
+      "count": 115,
+      "avg_crop_yield_ton_ha": 11.82,
+      "avg_soil_fertility_score": 61.024,
+      "avg_organic_matter_pct": 2.976
+    },
+    {
+      "crop_type": "Cassava",
+      "soil_type": "Clay_Loam",
+      "count": 122,
+      "avg_crop_yield_ton_ha": 11.76,
+      "avg_soil_fertility_score": 60.213,
+      "avg_organic_matter_pct": 2.981
+    },
+    {
+      "crop_type": "Grape",
+      "soil_type": "Sandy_Loam",
+      "count": 110,
+      "avg_crop_yield_ton_ha": 7.598,
+      "avg_soil_fertility_score": 45.83,
+      "avg_organic_matter_pct": 1.734
+    }
+  ],
+  "top_features": [
+    "soil_ph",
+    "organic_matter_pct",
+    "nitrogen_ppm",
+    "phosphorus_ppm",
+    "potassium_ppm",
+    "soil_moisture_pct",
+    "annual_rainfall_mm",
+    "avg_temperature_c",
+    "solar_radiation_mj",
+    "fertilizer_usage_kg_ha",
+    "pest_pressure_score",
+    "soil_fertility_score"
+  ]
+}
