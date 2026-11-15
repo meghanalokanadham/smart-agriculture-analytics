@@ -88,8 +88,6 @@ This project delivers:
 
 ## 📷 4. Dashboard & Execution Screenshots
 
-### Interactive Glassmorphism Dashboard
-![Dashboard View](docs/screenshots/dashboard_view_screenshot.png)
 
 ### Distributed Terminal Execution Log
 ![Terminal Output](docs/screenshots/terminal_output_screenshot.png)
